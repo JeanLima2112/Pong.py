@@ -1,5 +1,4 @@
 #                                   Requisitos a Implementar
-# Fechar o Jogo Quando Apertar o X da Janela
 # Pause/Restart
 # Transformar o Quadrado em uma bola
 # Adicionar Planos de Fundo
@@ -60,11 +59,10 @@ def larguradosjogadores():
     return tamanhobola
 
 def alturadosjogadores():
-    return 3 * tamanhobola
+    return 5 * tamanhobola
 
 def atualizar():
     global xdabola, ydabola, velocidadedabolaemx, velocidadedabolaemy, ydojogador1, ydojogador2
-
     xdabola += velocidadedabolaemx
     ydabola += velocidadedabolaemy
 
@@ -136,10 +134,20 @@ def desenhar():
 
     pygame.display.flip()
 
+
+
 pygame.init()
 pygame.display.set_mode((LARGURA_JANELA,ALTURA_JANELA),DOUBLEBUF | OPENGL)
+
 while True:
     atualizar()
     desenhar()
     pygame.event.pump()
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
+
+
+
 
