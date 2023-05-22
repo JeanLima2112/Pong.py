@@ -8,8 +8,8 @@ ALTURA_JANELA = 480
 ydabola = 0
 xdabola = 0
 tamanhobola = 20
-velocidadedabolaemx = 1
-velocidadedabolaemy = 1
+velocidadedabolaemx = 3
+velocidadedabolaemy = 3
 
 ydojogador1 = 0
 ydojogador2 = 0
