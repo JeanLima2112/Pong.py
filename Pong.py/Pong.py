@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from OpenGL.GL import *
+import time
 
 LARGURA_JANELA = 640
 ALTURA_JANELA = 480
@@ -8,8 +9,8 @@ ALTURA_JANELA = 480
 ydabola = 0
 xdabola = 0
 tamanhobola = 20
-velocidadedabolaemx = 3
-velocidadedabolaemy = 3
+velocidadedabolaemx = 0.5
+velocidadedabolaemy = 0.3
 
 ydojogador1 = 0
 ydojogador2 = 0
@@ -30,18 +31,20 @@ def alturadosjogadores():
 def atualizar():
     global xdabola, ydabola, velocidadedabolaemx, velocidadedabolaemy, ydojogador1, ydojogador2
 
-    xdabola = xdabola + velocidadedabolaemx
-    ydabola = ydabola + velocidadedabolaemy
+    xdabola += velocidadedabolaemx
+    ydabola += velocidadedabolaemy
 
     if (xdabola + tamanhobola / 2 > xdojogador2() - larguradosjogadores() / 2
             and ydabola - tamanhobola / 2 < ydojogador2 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador2 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
+        velocidadedabolaemx -= -0.1
 
     if (xdabola - tamanhobola / 2 < xdojogador1() + larguradosjogadores() / 2
             and ydabola - tamanhobola / 2 < ydojogador1 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador1 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
+        velocidadedabolaemx += 0.1
 
     if ydabola + tamanhobola / 2 > ALTURA_JANELA / 2:
         velocidadedabolaemy = -velocidadedabolaemy
@@ -52,20 +55,25 @@ def atualizar():
     if xdabola < -LARGURA_JANELA / 2 or xdabola > LARGURA_JANELA / 2:
         xdabola = 0
         ydabola = 0
+        time.sleep(2)
 
     keys = pygame.key.get_pressed()
 
-    if keys[K_w]:
-        ydojogador1 = ydojogador1 + 5
+    if ydojogador1 + tamanhobola / 2 < +ALTURA_JANELA / 2:
+        if keys[K_w]:
+            ydojogador1 = ydojogador1 + 1
 
-    if keys[K_s]:
-        ydojogador1 = ydojogador1 - 5
+    if ydojogador1 - tamanhobola / 2 > -ALTURA_JANELA / 2:
+        if keys[K_s]:
+            ydojogador1 = ydojogador1 - 1
 
-    if keys[K_UP]:
-        ydojogador2 = ydojogador2 + 5
+    if ydojogador2 + tamanhobola / 2 < +ALTURA_JANELA / 2:
+        if keys[K_UP]:
+            ydojogador2 = ydojogador2 + 1
 
-    if keys[K_DOWN]:
-        ydojogador2 = ydojogador2 - 5
+    if ydojogador2 - tamanhobola / 2 > -ALTURA_JANELA / 2:
+        if keys[K_DOWN]:
+            ydojogador2 = ydojogador2 - 1
 
 def desenharretangulo(x,y,largura,altura,r,g,b):
     glColor(r,g,b)
@@ -73,7 +81,7 @@ def desenharretangulo(x,y,largura,altura,r,g,b):
     glBegin(GL_QUADS)
     glVertex2f(-0.5 * largura + x, -0.5 * altura + y)
     glVertex2f(0.5 * largura + x, -0.5 * altura + y)
-    glVertex2f(-0.5 * largura + x, 0.5 * altura + y)
+    glVertex2f(0.5 * largura + x,0.5 * altura + y)
     glVertex2f(-0.5 * largura + x, 0.5 * altura + y)
     glEnd()
 def desenhar():
@@ -85,9 +93,9 @@ def desenhar():
 
     glClear(GL_COLOR_BUFFER_BIT)
 
-    desenharretangulo(xdabola, ydabola, tamanhobola, tamanhobola, 1, 1, 0)
-    desenharretangulo(xdojogador1(), ydojogador1, larguradosjogadores(), alturadosjogadores(), 1, 0, 0)
-    desenharretangulo(xdojogador2(), ydojogador2, larguradosjogadores(), alturadosjogadores(), 0, 0, 1)
+    desenharretangulo(xdabola, ydabola, tamanhobola, tamanhobola, 1, 1, 1)
+    desenharretangulo(xdojogador1(), ydojogador1, larguradosjogadores(), alturadosjogadores(), 1, 1, 1)
+    desenharretangulo(xdojogador2(), ydojogador2, larguradosjogadores(), alturadosjogadores(), 1, 1, 1)
 
     pygame.display.flip()
 
