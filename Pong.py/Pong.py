@@ -1,5 +1,4 @@
 #                                   Requisitos a Implementar
-# Efeitos sonoros (Musica de Fundo, Efeito sonoro de toque na bolinha, Som de ponto)
 # Fechar o Jogo Quando Apertar o X da Janela
 # Pause/Restart
 # Transformar o Quadrado em uma bola
@@ -7,6 +6,7 @@
 # Placar
 # Animação de inicio do jogo/ Reinicio após Ponto
 # Tela inicial
+# Tla inicial controlada por Mouse
 # Opcional: Tela de Options
 # opcional: integrar o NEAP para criar o modo 1 player
 
@@ -34,6 +34,8 @@ sons = [pygame.mixer.Sound(efeitoque[0]),
         pygame.mixer.Sound(efeitoque[2]),
         pygame.mixer.Sound(efeitoque[3]),
         pygame.mixer.Sound(efeitoque[4])]
+
+somponto = pygame.mixer.Sound("Sounds/spell1_0.wav")
 
 LARGURA_JANELA = 640
 ALTURA_JANELA = 480
@@ -90,6 +92,7 @@ def atualizar():
         xdabola = 0
         ydabola = 0
         #time.sleep(2)
+        somponto.play()
 
     keys = pygame.key.get_pressed()
 
