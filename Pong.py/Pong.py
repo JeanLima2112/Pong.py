@@ -6,7 +6,7 @@
 # Placar
 # Pause/Restart
 # Tela inicial
-# Tla inicial controlada por Mouse
+# Tela inicial controlada por Mouse
 # Opcional: Tela de Options
 # opcional: integrar o NEAP para criar o modo 1 player
 
@@ -25,7 +25,7 @@ Musicas = ["Sounds/Lewis Capaldi - Someone You Loved (Tradução)(MP3_320K).mp3"
 #Musica de Fundo
 pygame.mixer.init()
 pygame.mixer.music.load(f"{random.choice(Musicas)}")
-pygame.mixer.music.set_volume(0.05)
+pygame.mixer.music.set_volume(0.1)
 pygame.mixer.music.play(-1)
 
 # efeitos Sonoros
@@ -62,7 +62,7 @@ def larguradosjogadores():
     return tamanhobola
 
 def alturadosjogadores():
-    return 5 * tamanhobola
+    return 30 * tamanhobola
 
 def atualizar():
     global xdabola, ydabola, velocidadedabolaemx, velocidadedabolaemy, ydojogador1, ydojogador2
@@ -73,14 +73,16 @@ def atualizar():
             and ydabola - tamanhobola / 2 < ydojogador2 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador2 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        velocidadedabolaemx -= -0.1
+        velocidadedabolaemx -= 0.05
+        velocidadedabolaemy +=0.025
         random.choice(sons).play()
 
     if (xdabola - tamanhobola / 2 < xdojogador1() + larguradosjogadores() / 2
             and ydabola - tamanhobola / 2 < ydojogador1 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador1 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        velocidadedabolaemx += 0.1
+        velocidadedabolaemx += 0.05
+        velocidadedabolaemy -= 0.025
         random.choice(sons).play()
 
     if ydabola + tamanhobola / 2 > ALTURA_JANELA / 2:
@@ -96,30 +98,34 @@ def atualizar():
         #time.sleep(2)
         #pontosj1 += 1
         somponto.play()
+        velocidadedabolaemx = 0.3
+        velocidadedabolaemy = 0.1
     if xdabola > LARGURA_JANELA / 2:
         xdabola = 0
         ydabola = 0
         #time.sleep(2)
         somponto.play()
         #pontosj2 += 1
+        velocidadedabolaemx = 0.3
+        velocidadedabolaemy = 0.1
 
     keys = pygame.key.get_pressed()
 
     if ydojogador1 + tamanhobola / 2 < +ALTURA_JANELA / 2:
         if keys[K_w]:
-            ydojogador1 = ydojogador1 + 1
+            ydojogador1 = ydojogador1 + 0.5
 
     if ydojogador1 - tamanhobola / 2 > -ALTURA_JANELA / 2:
         if keys[K_s]:
-            ydojogador1 = ydojogador1 - 1
+            ydojogador1 = ydojogador1 - 0.5
 
     if ydojogador2 + tamanhobola / 2 < +ALTURA_JANELA / 2:
         if keys[K_UP]:
-            ydojogador2 = ydojogador2 + 1
+            ydojogador2 = ydojogador2 + 0.5
 
     if ydojogador2 - tamanhobola / 2 > -ALTURA_JANELA / 2:
         if keys[K_DOWN]:
-            ydojogador2 = ydojogador2 - 1
+            ydojogador2 = ydojogador2 - 0.5
 
 def desenharretangulo(x,y,largura,altura,r,g,b):
     glColor(r,g,b)
