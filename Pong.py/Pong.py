@@ -1,9 +1,10 @@
 #                                   Requisitos a Implementar
 # Pause/Restart
-# Transformar o Quadrado em uma bola
+# Transformar o Quadrado em Circulo
 # Adicionar Planos de Fundo
-# Placar
 # Animação de inicio do jogo/ Reinicio após Ponto
+# Placar
+# Pause/Restart
 # Tela inicial
 # Tla inicial controlada por Mouse
 # Opcional: Tela de Options
@@ -48,6 +49,8 @@ velocidadedabolaemy = 0.1
 ydojogador1 = 0
 ydojogador2 = 0
 
+pontosj2 = 0
+pontosj1 = 0
 
 def xdojogador1():
     return -LARGURA_JANELA / 2 + larguradosjogadores() / 2
@@ -70,14 +73,14 @@ def atualizar():
             and ydabola - tamanhobola / 2 < ydojogador2 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador2 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        #velocidadedabolaemx -= -0.1
+        velocidadedabolaemx -= -0.1
         random.choice(sons).play()
 
     if (xdabola - tamanhobola / 2 < xdojogador1() + larguradosjogadores() / 2
             and ydabola - tamanhobola / 2 < ydojogador1 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador1 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        #velocidadedabolaemx += 0.1
+        velocidadedabolaemx += 0.1
         random.choice(sons).play()
 
     if ydabola + tamanhobola / 2 > ALTURA_JANELA / 2:
@@ -86,11 +89,19 @@ def atualizar():
     if ydabola - tamanhobola / 2 < -ALTURA_JANELA / 2:
         velocidadedabolaemy = -velocidadedabolaemy
 
-    if xdabola < -LARGURA_JANELA / 2 or xdabola > LARGURA_JANELA / 2:
+    if xdabola < -LARGURA_JANELA / 2:
+
+        xdabola = 0
+        ydabola = 0
+        #time.sleep(2)
+        #pontosj1 += 1
+        somponto.play()
+    if xdabola > LARGURA_JANELA / 2:
         xdabola = 0
         ydabola = 0
         #time.sleep(2)
         somponto.play()
+        #pontosj2 += 1
 
     keys = pygame.key.get_pressed()
 
@@ -138,6 +149,7 @@ def desenhar():
 
 pygame.init()
 pygame.display.set_mode((LARGURA_JANELA,ALTURA_JANELA),DOUBLEBUF | OPENGL)
+
 
 while True:
     atualizar()
