@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb1806df-174f-43d2-965a-11f09b225f96" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/EFEITOS SONOROS-1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/EFEITOS SONOROS-2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/EFEITOS SONOROS-3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/EFEITOS SONOROS-4.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/EFEITOS SONOROS-5.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/Lewis Capaldi - Someone You Loved (Tradução)(MP3_320K).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/Tom Odell - Another Love (Official Video)(MP3_70K).mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pong.py/Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pong.py/Pong.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pong.py/Pong.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
