@@ -2,6 +2,8 @@
 # Efeitos sonoros (Musica de Fundo, Efeito sonoro de toque na bolinha, Som de ponto)
 # Fechar o Jogo Quando Apertar o X da Janela
 # Pause/Restart
+# Transformar o Quadrado em uma bola
+# Adicionar Planos de Fundo
 # Placar
 # Animação de inicio do jogo/ Reinicio após Ponto
 # Tela inicial
