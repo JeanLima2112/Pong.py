@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fb1806df-174f-43d2-965a-11f09b225f96" name="Changes" comment="tt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pong.py/Pong.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pong.py/Pong.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pong.py/Sounds/Lewis Capaldi - Someone You Loved (Tradução)(MP3_320K).mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pong.py/Sounds/Tom Odell - Another Love (Official Video)(MP3_70K).mp3" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +26,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Pong.py/Sounds" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Jogo Executavel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jean Lima\Documents\Exercicios\Pong.py\Jogo Executavel" />
       <recent name="C:\Users\Jean Lima\Documents\Exercicios\Pong.py\Pong.py\Sounds" />
       <recent name="C:\Users\Jean Lima\Documents\Exercicios\Pong.py\Pong.py\Images" />
     </key>
