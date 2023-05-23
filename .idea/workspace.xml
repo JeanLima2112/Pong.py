@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb1806df-174f-43d2-965a-11f09b225f96" name="Changes" comment="tt" />
+    <list default="true" id="fb1806df-174f-43d2-965a-11f09b225f96" name="Changes" comment="tt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Pong.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/EFEITOS SONOROS-1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/EFEITOS SONOROS-2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/EFEITOS SONOROS-3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/EFEITOS SONOROS-4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/EFEITOS SONOROS-5.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/spell1_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jogo Executavel/Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +43,7 @@
       <recent name="C:\Users\Jean Lima\Documents\Exercicios\Pong.py\Pong.py\Images" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Pong">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Pong" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -115,5 +125,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tt" />
     <option name="LAST_COMMIT_MESSAGE" value="tt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
