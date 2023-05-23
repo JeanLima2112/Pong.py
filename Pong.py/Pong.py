@@ -1,16 +1,3 @@
-#                                   Requisitos a Implementar
-# Pause/Restart
-# Transformar o Quadrado em Circulo
-# Adicionar Planos de Fundo
-# Animação de inicio do jogo/ Reinicio após Ponto
-# Placar
-# Pause/Restart
-# Tela inicial
-# Tela inicial controlada por Mouse
-# Opcional: Tela de Options
-# opcional: integrar o NEAP para criar o modo 1 player
-
-
 import pygame
 from pygame.locals import *
 from OpenGL.GL import *
@@ -19,15 +6,12 @@ import random
 efeitoque = ["Sounds/EFEITOS SONOROS-1.wav","Sounds/EFEITOS SONOROS-2.wav",
              "Sounds/EFEITOS SONOROS-3.wav","Sounds/EFEITOS SONOROS-4.wav",
              "Sounds/EFEITOS SONOROS-5.wav"]
-Musicas = ["Sounds/Lewis Capaldi - Someone You Loved (Tradução)(MP3_320K).mp3",
-           "Sounds/Tom Odell - Another Love (Official Video)(MP3_70K).mp3",
-           "Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3"]
+
 #Musica de Fundo
 pygame.mixer.init()
-pygame.mixer.music.load(f"{random.choice(Musicas)}")
-pygame.mixer.music.set_volume(0.1)
+pygame.mixer.music.load("Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3")
+pygame.mixer.music.set_volume(0.3)
 pygame.mixer.music.play(-1)
-
 # efeitos Sonoros
 sons = [pygame.mixer.Sound(efeitoque[0]),
         pygame.mixer.Sound(efeitoque[1]),
@@ -37,7 +21,7 @@ sons = [pygame.mixer.Sound(efeitoque[0]),
 
 somponto = pygame.mixer.Sound("Sounds/spell1_0.wav")
 
-LARGURA_JANELA = 640
+LARGURA_JANELA = 680
 ALTURA_JANELA = 480
 
 ydabola = 0
@@ -62,7 +46,7 @@ def larguradosjogadores():
     return tamanhobola
 
 def alturadosjogadores():
-    return 30 * tamanhobola
+    return 5 * tamanhobola
 
 def atualizar():
     global xdabola, ydabola, velocidadedabolaemx, velocidadedabolaemy, ydojogador1, ydojogador2
@@ -73,16 +57,16 @@ def atualizar():
             and ydabola - tamanhobola / 2 < ydojogador2 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador2 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        velocidadedabolaemx -= 0.05
-        velocidadedabolaemy +=0.025
+        velocidadedabolaemx -= 0.0035
+        velocidadedabolaemy -= random.random()/4
         random.choice(sons).play()
 
     if (xdabola - tamanhobola / 2 < xdojogador1() + larguradosjogadores() / 2
             and ydabola - tamanhobola / 2 < ydojogador1 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador1 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        velocidadedabolaemx += 0.05
-        velocidadedabolaemy -= 0.025
+        velocidadedabolaemx += 0.0035
+        velocidadedabolaemy += random.random()/4
         random.choice(sons).play()
 
     if ydabola + tamanhobola / 2 > ALTURA_JANELA / 2:
@@ -94,18 +78,20 @@ def atualizar():
     if xdabola < -LARGURA_JANELA / 2:
 
         xdabola = 0
-        ydabola = 0
-        #time.sleep(2)
-        #pontosj1 += 1
         somponto.play()
-        velocidadedabolaemx = 0.3
-        velocidadedabolaemy = 0.1
+        time.sleep(0.7)
+
+
+        velocidadedabolaemx = - 0.3
+        velocidadedabolaemy = - 0.1
+
     if xdabola > LARGURA_JANELA / 2:
         xdabola = 0
-        ydabola = 0
-        #time.sleep(2)
         somponto.play()
-        #pontosj2 += 1
+        time.sleep(0.7)
+
+
+
         velocidadedabolaemx = 0.3
         velocidadedabolaemy = 0.1
 
@@ -127,6 +113,7 @@ def atualizar():
         if keys[K_DOWN]:
             ydojogador2 = ydojogador2 - 0.5
 
+
 def desenharretangulo(x,y,largura,altura,r,g,b):
     glColor(r,g,b)
 
@@ -145,17 +132,15 @@ def desenhar():
 
     glClear(GL_COLOR_BUFFER_BIT)
 
-    desenharretangulo(xdabola, ydabola, tamanhobola, tamanhobola, 1, 1, 1)
+    desenharretangulo(xdabola, ydabola, tamanhobola, tamanhobola, 1, 1, 0)
     desenharretangulo(xdojogador1(), ydojogador1, larguradosjogadores(), alturadosjogadores(), 1, 1, 1)
     desenharretangulo(xdojogador2(), ydojogador2, larguradosjogadores(), alturadosjogadores(), 1, 1, 1)
 
     pygame.display.flip()
 
-
-
 pygame.init()
 pygame.display.set_mode((LARGURA_JANELA,ALTURA_JANELA),DOUBLEBUF | OPENGL)
-
+pygame.display.set_caption("PONG.py")
 
 while True:
     atualizar()
