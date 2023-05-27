@@ -10,8 +10,8 @@ efeitoque = ["Sounds/EFEITOS SONOROS-1.wav","Sounds/EFEITOS SONOROS-2.wav",
 #Musica de Fundo
 pygame.mixer.init()
 pygame.mixer.music.load("Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3")
-pygame.mixer.music.set_volume(0.3)
-pygame.mixer.music.play(-1)
+pygame.mixer.music.set_volume(0)
+
 # efeitos Sonoros
 sons = [pygame.mixer.Sound(efeitoque[0]),
         pygame.mixer.Sound(efeitoque[1]),
@@ -57,7 +57,7 @@ def atualizar():
             and ydabola - tamanhobola / 2 < ydojogador2 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador2 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        velocidadedabolaemx -= 0.0035
+        velocidadedabolaemx -= 0.035
         velocidadedabolaemy -= random.random()/4
         random.choice(sons).play()
 
@@ -65,7 +65,7 @@ def atualizar():
             and ydabola - tamanhobola / 2 < ydojogador1 + alturadosjogadores() / 2
             and ydabola + tamanhobola / 2 > ydojogador1 - alturadosjogadores() / 2):
         velocidadedabolaemx = -velocidadedabolaemx
-        velocidadedabolaemx += 0.0035
+        velocidadedabolaemx += 0.035
         velocidadedabolaemy += random.random()/4
         random.choice(sons).play()
 
@@ -141,6 +141,7 @@ def desenhar():
 pygame.init()
 pygame.display.set_mode((LARGURA_JANELA,ALTURA_JANELA),DOUBLEBUF | OPENGL)
 pygame.display.set_caption("PONG.py")
+pygame.mixer.music.play(-1)
 
 while True:
     atualizar()
