@@ -42,7 +42,7 @@
       <recent name="C:\Users\Jean Lima\Documents\Exercicios\Pong.py\Pong.py\Images" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.teste do hiroki">
+  <component name="RunManager" selected="Python.Pong">
     <configuration name="Pong" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -108,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.teste do hiroki" />
         <item itemvalue="Python.Pong" />
+        <item itemvalue="Python.teste do hiroki" />
       </list>
     </recent_temporary>
   </component>
@@ -154,5 +154,16 @@
     <MESSAGE value="tt" />
     <MESSAGE value="Final" />
     <option name="LAST_COMMIT_MESSAGE" value="Final" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
