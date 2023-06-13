@@ -99,19 +99,19 @@ def atualizar():
 
     if ydojogador1 + tamanhobola / 2 < +ALTURA_JANELA / 2:
         if keys[K_w]:
-            ydojogador1 = ydojogador1 + 0.5
+            ydojogador1 = ydojogador1 + 1
 
     if ydojogador1 - tamanhobola / 2 > -ALTURA_JANELA / 2:
         if keys[K_s]:
-            ydojogador1 = ydojogador1 - 0.5
+            ydojogador1 = ydojogador1 - 1
 
     if ydojogador2 + tamanhobola / 2 < +ALTURA_JANELA / 2:
         if keys[K_UP]:
-            ydojogador2 = ydojogador2 + 0.5
+            ydojogador2 = ydojogador2 + 1
 
     if ydojogador2 - tamanhobola / 2 > -ALTURA_JANELA / 2:
         if keys[K_DOWN]:
-            ydojogador2 = ydojogador2 - 0.5
+            ydojogador2 = ydojogador2 - 1
 
 
 def desenharretangulo(x,y,largura,altura,r,g,b):
