@@ -3,6 +3,7 @@ from pygame.locals import *
 from OpenGL.GL import *
 import time
 import random
+
 efeitoque = ["Sounds/EFEITOS SONOROS-1.wav","Sounds/EFEITOS SONOROS-2.wav",
              "Sounds/EFEITOS SONOROS-3.wav","Sounds/EFEITOS SONOROS-4.wav",
              "Sounds/EFEITOS SONOROS-5.wav"]
