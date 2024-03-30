@@ -11,7 +11,7 @@ efeitoque = ["Sounds/EFEITOS SONOROS-1.wav","Sounds/EFEITOS SONOROS-2.wav",
 #Musica de Fundo
 pygame.mixer.init()
 pygame.mixer.music.load("Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3")
-pygame.mixer.music.set_volume(0)
+pygame.mixer.music.set_volume(2)
 
 # efeitos Sonoros
 sons = [pygame.mixer.Sound(efeitoque[0]),
