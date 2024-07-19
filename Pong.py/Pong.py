@@ -4,14 +4,12 @@ from OpenGL.GL import *
 import time
 import random
 
-efeitoque = ["Sounds/EFEITOS SONOROS-1.wav","Sounds/EFEITOS SONOROS-2.wav",
-             "Sounds/EFEITOS SONOROS-3.wav","Sounds/EFEITOS SONOROS-4.wav",
-             "Sounds/EFEITOS SONOROS-5.wav"]
+efeitoque = ["Pong.py/Sounds/EFEITOS SONOROS-1.wav","Pong.py/Sounds/EFEITOS SONOROS-2.wav",
+             "Pong.py/Sounds/EFEITOS SONOROS-3.wav","Pong.py/Sounds/EFEITOS SONOROS-4.wav",
+             "Pong.py/Sounds/EFEITOS SONOROS-5.wav"]
 
 #Musica de Fundo
 pygame.mixer.init()
-pygame.mixer.music.load("Sounds/❌--Te Assumi Pro Brasil-(SAXOFONE COVER) -Matheus _ Kauan (SAXOFONE COVER)(MP3_320K).mp3")
-pygame.mixer.music.set_volume(2)
 
 # efeitos Sonoros
 sons = [pygame.mixer.Sound(efeitoque[0]),
@@ -20,10 +18,10 @@ sons = [pygame.mixer.Sound(efeitoque[0]),
         pygame.mixer.Sound(efeitoque[3]),
         pygame.mixer.Sound(efeitoque[4])]
 
-somponto = pygame.mixer.Sound("Sounds/spell1_0.wav")
+somponto = pygame.mixer.Sound("Pong.py/Sounds/spell1_0.wav")
 
-LARGURA_JANELA = 680
-ALTURA_JANELA = 480
+LARGURA_JANELA = 900
+ALTURA_JANELA = 700
 
 ydabola = 0
 xdabola = 0
@@ -142,7 +140,6 @@ def desenhar():
 pygame.init()
 pygame.display.set_mode((LARGURA_JANELA,ALTURA_JANELA),DOUBLEBUF | OPENGL)
 pygame.display.set_caption("PONG.py")
-pygame.mixer.music.play(-1)
 
 while True:
     atualizar()
