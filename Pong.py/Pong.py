@@ -20,8 +20,8 @@ sons = [pygame.mixer.Sound(efeitoque[0]),
 
 somponto = pygame.mixer.Sound("Pong.py/Sounds/spell1_0.wav")
 
-LARGURA_JANELA = 900
-ALTURA_JANELA = 700
+LARGURA_JANELA = 680
+ALTURA_JANELA = 400
 
 ydabola = 0
 xdabola = 0
@@ -131,9 +131,9 @@ def desenhar():
 
     glClear(GL_COLOR_BUFFER_BIT)
 
-    desenharretangulo(xdabola, ydabola, tamanhobola, tamanhobola, 1, 1, 0)
-    desenharretangulo(xdojogador1(), ydojogador1, larguradosjogadores(), alturadosjogadores(), 1, 1, 1)
-    desenharretangulo(xdojogador2(), ydojogador2, larguradosjogadores(), alturadosjogadores(), 1, 1, 1)
+    desenharretangulo(xdabola, ydabola, tamanhobola, tamanhobola, 1, 0, 0)
+    desenharretangulo(xdojogador1(), ydojogador1, larguradosjogadores(), alturadosjogadores(), 0, 1, 0)
+    desenharretangulo(xdojogador2(), ydojogador2, larguradosjogadores(), alturadosjogadores(), 0, 1, 0)
 
     pygame.display.flip()
 
